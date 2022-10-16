@@ -10,7 +10,7 @@ const winning = [
     [0, 4, 8],
     [2, 4, 6],
 ]
-const cellElements = document.querySelectorAll('[data-cell')
+const cellElements = document.querySelectorAll('[data-cell]')
 const boardElement = document.getElementById('board')
 const winningMassageElement = document.getElementById('winningMassage')
 const restartButton = document.getElementById('restartButton')
@@ -52,7 +52,7 @@ function endGame(draw) {
     if (draw) {
         winningMessageTextElement.innerText = 'it`s a draw!'
     }else {
-        winningMessageTextElement.innerText = `player with ${isPlayer_o_turn ? 'o' : 'x'} wins!`
+        winningMessageTextElement.innerText = `player with ${isPlayer_o_turn ? 'O' : 'X'} wins!`
     }
     winningMassageElement.classList.add('show')
 }
@@ -74,10 +74,11 @@ function swapTurns () {
 function setBoardHoverClass() {
     boardElement.classList.remove(player_x_class)
     boardElement.classList.remove(player_o_class)
-    isPlayer_o_turn ? boardElement.classList.add(player_o_class) :  boardElement.classList.add(player_x_class)
+        isPlayer_o_turn ? boardElement.classList.add(player_o_class) :  boardElement.classList.add(player_x_class)
     
     
 }
+
 function checkWin (currentClass) {
     return winning.some(combination => {
         return combination.every(index => {
