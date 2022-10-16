@@ -24,7 +24,7 @@ startGame()
 restartButton.addEventListener('click', startGame)
 
 function startGame() {
-    circle_classTurn = false
+    circle_Turn = false
     cellElements.forEach(cell => {
         cell.classList.remove(player_x)
         cell.classList.remove(player_circle)
@@ -57,6 +57,8 @@ function endGame(draw) {
     }
     winningMassageElement.classList.add('show')
 }
+
+
 function isDraw () {
     return[...cellElements].every(cell => {
         return cell.classList.contains(player_x) || cell.classList.contains(player_circle)
@@ -75,10 +77,9 @@ function swapTurns () {
 function setBoardHoverClass() {
     board.classList.remove(player_x)
     board.classList.remove(player_circle)
-    circle_Turn ? boardElement.classList.add(player_circle) :  boardElement.classList.add(player_x)
-    
-    
+    circle_Turn ? boardElement.classList.add(player_circle) :  boardElement.classList.add(player_x) 
 }
+
 
 function checkWin (currentClass) {
     return winning.some(combination => {
