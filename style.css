@@ -15,7 +15,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: lightslategray;
+    background-color: lightgoldenrodyellow;
 }
 .board {
     width: 500px;
@@ -92,7 +92,7 @@
 .winning_Message button:hover {
     color: white;
     border-color: white;
-    background-color: black;
+    background-color:lightsteelblue;
 }
 
 .winning_Message.show {
