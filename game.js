@@ -78,3 +78,10 @@ function setBoardHoverClass() {
     
     
 }
+function checkWin (currentClass) {
+    return winning.some(combination => {
+        return combination.every(index => {
+            return cellElements[index].classList.contains(currentClass)
+        })
+    })
+}
