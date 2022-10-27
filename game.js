@@ -18,13 +18,14 @@ const restartButton = document.getElementById('restartButton')
 const winningMessageTextElement = document.querySelector('#winningMessageText')
 
 let circle_Turn
-
+let cellElements
 //-------------------start game-------------------------
 startGame()
 
 restartButton.addEventListener('click', startGame)
 
 function startGame() {
+    cellElements = document.querySelectorAll('.cell')
     circle_Turn = false
     cellElements.forEach(cell => {
         cell.classList.remove(player_x)
@@ -67,7 +68,9 @@ function isDraw () {
 }
 
 function placeMark (cell, currentClass) {
+    
     cell.classList.add(currentClass)
+    
 }
 
 function swapTurns () {
